@@ -140,18 +140,6 @@ namespace AlignedCurrencyIndicator
 
 
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-                realFundsWidget.gameObject.GetComponentsInChildren<Renderer>().ToList().ForEach(r =>
-                {
-                    r.enabled = !r.enabled;
-                    Log.Normal("{0} renderer in {1}", r.enabled ? "enabled" : "disabled", r.gameObject.name);
-                });
-        }
-
-
-
         private System.Collections.IEnumerator WaitForStart()
         {
             Tumblers tumblers = realFundsWidget.GetComponentInChildren<Tumblers>();
