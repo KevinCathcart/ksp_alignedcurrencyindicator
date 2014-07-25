@@ -41,6 +41,13 @@ namespace AlignedCurrencyIndicator
 
         void Start()
         {
+
+            if (HighLogic.fetch.currentGame.Mode != Game.Modes.CAREER)
+            {
+                Log.Warning("GameMode is currently {0}; funds irrelevant. Disabling.", HighLogic.fetch.currentGame.Mode.ToString());
+                return;
+            }
+
             Log.Debug("Current game mode: {0}", HighLogic.fetch.currentGame.Mode.ToString());
             Log.Debug("Listing cameras...");
             Camera.allCameras.ToList().ForEach(cam => Log.Debug("Camera: {0}", cam.name));

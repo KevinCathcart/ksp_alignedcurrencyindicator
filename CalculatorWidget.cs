@@ -164,6 +164,7 @@ namespace AlignedCurrencyIndicator
         {
             GameEvents.onGUILaunchScreenVesselSelected.Remove(VesselSelected);
             GameEvents.onEditorShipModified.Remove(ShipModified);
+            GameEvents.OnFundsChanged.Remove(FundsChanged);
         }
 
 
